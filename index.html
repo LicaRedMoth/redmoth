@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мой сайт</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column; /* блоки идут сверху вниз */
+      background-image: url("bg.png");
+      background-repeat: repeat;
+      color: white;
+      font-family: "Times New Roman", Times, serif;
+      text-align: center;
+    }
+
+    .logo-container {
+      flex: 1; /* занимает всё доступное пространство */
+      display: flex;
+      justify-content: center;
+      align-items: center; /* центрирование логотипа */
+    }
+
+    img.logo {
+      max-width: 80%;
+      height: auto;
+    }
+
+    ul.index {
+      list-style-type: decimal; /* нумерация */
+      margin: 20px auto;
+      padding: 0;
+      text-align: left; /* выравнивание списка */
+      max-width: 400px; /* чтобы список не растягивался слишком широко */
+    }
+
+    ul.index li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="logo.png" alt="Логотип" class="logo">
+  </div>
+
+  <ul class="index">
+    <div>Text</div>
+    <li>Пункт первый</li>
+    <li>Пункт второй</li>
+    <li>Пункт третий</li>
+    <li>Пункт первый</li>
+    <li>Пункт второй</li>
+    <li>Пункт третий</li>
+    <li>Пункт первый</li>
+    <li>Пункт второй</li>
+    <li>Пункт третий</li>
+    <li>Пункт первый</li>
+    <li>Пункт второй</li>
+    <li>Пункт третий</li>
+  </ul>
+</body>
+</html>
