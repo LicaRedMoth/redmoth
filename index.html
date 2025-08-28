@@ -1,65 +1,239 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <link rel="icon" href="res/ico.png" type="image/x-icon">
   <meta charset="UTF-8">
-  <title>Мой сайт</title>
+  <title>L:\REDMOTH.MOE</title>
   <style>
+    @keyframes backgroundScroll {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 0 880%; /* Прокрутка вниз */
+      }
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
       display: flex;
-      flex-direction: column; /* блоки идут сверху вниз */
-      background-image: url("bg.png");
+      flex-direction: column;
+      background-image: url("res/bg.png");
       background-repeat: repeat;
+      animation: backgroundScroll 128s linear infinite;
       color: white;
       font-family: "Times New Roman", Times, serif;
       text-align: center;
     }
 
-    .logo-container {
-      flex: 1; /* занимает всё доступное пространство */
+    /* Шапка сайта */
+    header {
+      background-color: #000;
+      padding: 10px 0;
+      width: 100%;
+    }
+
+    .header-content {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header-logo {
+      height: 50px;
+      display: block;
+    }
+
+    /* Контейнер для логотипа с эффектом смены (исправленная версия) */
+    .logo-swap {
+      display: inline-block;
+      position: relative;
+      height: 50px;
+    }
+
+    .logo-swap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.1s ease;
+    }
+
+    .logo-swap .hover-logo {
+      opacity: 0;
+    }
+
+    .logo-swap:hover .default-logo {
+      opacity: 0;
+    }
+
+    .logo-swap:hover .hover-logo {
+      opacity: 1;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Основное содержимое */
+    .logo-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: center; /* центрирование логотипа */
+      align-items: center;
+      padding: 20px 0;
     }
 
     img.logo {
       max-width: 80%;
       height: auto;
+      margin-bottom: 30px;
+    }
+
+    .gifs-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .gifs-container img {
+      max-height: 100px;
+      width: auto;
     }
 
     ul.index {
-      list-style-type: decimal; /* нумерация */
+      list-style-type: decimal;
       margin: 20px auto;
       padding: 0;
-      text-align: left; /* выравнивание списка */
-      max-width: 400px; /* чтобы список не растягивался слишком широко */
+      text-align: left;
+      max-width: 400px;
     }
 
     ul.index li {
       margin: 5px 0;
     }
+
+    /* Стиль для webm "эмодзи" */
+    .webm-emoji {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    /* Подвал сайта */
+    footer {
+      background-color: #000;
+      padding: 20px 0;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .social-buttons a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 5px 10px;
+      border: 1px solid white;
+      border-radius: 3px;
+    }
+
+    .copyright {
+      margin-top: 10px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
+  <!-- Шапка сайта -->
+  <header>
+    <div class="header-content">
+      <a href="https://redmoth.moe" class="logo-swap">
+        <img src="res/uplogo.png" alt="Логотип" class="header-logo default-logo">
+        <img src="res/uplogo_selected.png" alt="Логотип" class="header-logo hover-logo">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="music/index.html">Music</a></li>
+          <li><a href="https://redmoth.moe">Archive</a></li>
+          <li><a href="https://redmoth.moe">Projects</a></li>
+          <li><a href="https://redmoth.moe">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Основное содержимое -->
   <div class="logo-container">
-    <img src="logo.png" alt="Логотип" class="logo">
+    <img src="res/logo.png" alt="Логотип" class="logo">
+
+    <!-- Контейнер для гифок -->
+    <div class="gifs-container">
+      <img src="res/0.gif" alt="Gif 0">
+      <img src="res/1.gif" alt="Gif 1">
+      <img src="res/2.gif" alt="Gif 2">
+      <img src="res/3.gif" alt="Gif 3">
+      <img src="res/4.gif" alt="Gif 4">
+      <img src="res/5.gif" alt="Gif 5">
+      <img src="res/6.gif" alt="Gif 6">
+      <img src="res/7.gif" alt="Gif 7">
+      <img src="res/8.gif" alt="Gif 8">
+      <img src="res/9.gif" alt="Gif 9">
+    </div>
   </div>
 
   <ul class="index">
-    <div>Text</div>
-    <li>Пункт первый</li>
-    <li>Пункт второй</li>
-    <li>Пункт третий</li>
-    <li>Пункт первый</li>
-    <li>Пункт второй</li>
-    <li>Пункт третий</li>
-    <li>Пункт первый</li>
-    <li>Пункт второй</li>
-    <li>Пункт третий</li>
-    <li>Пункт первый</li>
-    <li>Пункт второй</li>
-    <li>Пункт третий</li>
+    <div>Site on reconstruction<video class="webm-emoji" autoplay loop muted playsinline><source src="emj/blackrandom_AgADNR4AAil6iEo.webm" type="video/webm"></video></div>
   </ul>
+
+  <!-- Подвал сайта -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-buttons">
+        <a href="https://t.me/RedMothSelf">Telegram</a>
+        <a href="https://github.com/LicaRedMoth/redmoth">GitHub</a>
+      </div>
+      <div class="copyright">© 2025 REDMOTH.MOE. All right are NOT reserved.</div>
+    </div>
+  </footer>
 </body>
 </html>
