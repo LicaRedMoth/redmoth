@@ -10,7 +10,7 @@
         background-position: 0 0;
       }
       to {
-        background-position: 0 880%; /* Прокрутка вниз */
+        background-position: 0 880%;
       }
     }
 
@@ -27,7 +27,6 @@
       text-align: center;
     }
 
-    /* Шапка сайта */
     header {
       background-color: #000;
       padding: 10px 0;
@@ -48,7 +47,6 @@
       display: block;
     }
 
-    /* Контейнер для логотипа с эффектом смены (исправленная версия) */
     .logo-swap {
       display: inline-block;
       position: relative;
@@ -95,7 +93,6 @@
       text-decoration: underline;
     }
 
-    /* Основное содержимое */
     .logo-container {
       flex: 1;
       display: flex;
@@ -137,13 +134,49 @@
       margin: 5px 0;
     }
 
-    /* Стиль для webm "эмодзи" */
     .webm-emoji {
       display: inline-block;
       width: 24px;
       height: 24px;
       vertical-align: middle;
       margin-left: 5px;
+    }
+
+    .black-rectangle {
+      background-color: #000;
+      border: 2px solid #333;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .rectangle-image {
+      max-width: 200px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .rectangle-content {
+      text-align: left;
+      flex: 1;
+    }
+
+    .rectangle-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .rectangle-description {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #ccc;
     }
 
     /* Подвал сайта */
@@ -184,7 +217,6 @@
   </style>
 </head>
 <body>
-  <!-- Шапка сайта -->
   <header>
     <div class="header-content">
       <a href="https://redmoth.moe" class="logo-swap">
@@ -194,19 +226,17 @@
       <nav>
         <ul>
           <li><a href="music/index.html">Music</a></li>
-          <li><a href="https://redmoth.moe">Archive</a></li>
-          <li><a href="https://redmoth.moe">Projects</a></li>
-          <li><a href="https://redmoth.moe">About</a></li>
+          <li><a href="archive/index.html">Archive</a></li>
+          <li><a href="projects/index.html">Projects</a></li>
+          <li><a href="about/index.html">About</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Основное содержимое -->
   <div class="logo-container">
     <img src="res/logo.png" alt="Логотип" class="logo">
 
-    <!-- Контейнер для гифок -->
     <div class="gifs-container">
       <img src="res/0.gif" alt="Gif 0">
       <img src="res/1.gif" alt="Gif 1">
@@ -224,6 +254,15 @@
   <ul class="index">
     <div>Site on reconstruction<video class="webm-emoji" autoplay loop muted playsinline><source src="emj/blackrandom_AgADNR4AAil6iEo.webm" type="video/webm"></video></div>
   </ul>
+
+  <!-- Черный прямоугольник с контентом (теперь кликабельный) -->
+  <a href="https://redmoth.moe" class="black-rectangle">
+    <img src="https://ia601002.us.archive.org/24/items/Crayon-Physics-Deluxe-Soundtrack/Crayon%20Physics%20Deluxe/cover_thumb.png" alt="Swelter" class="rectangle-image">
+    <div class="rectangle-content">
+      <h2 class="rectangle-title">Crayon Physics Deluxe Soundtrack - СОХРАНЁН!</h2>
+      <p class="rectangle-description">Нам удалось найти саундтрек к этой замечательной игре в максимально возможном качестве, посмотрите как это было!</p>
+    </div>
+  </a>
 
   <!-- Подвал сайта -->
   <footer>
