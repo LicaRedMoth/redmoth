@@ -1,210 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <base href="../">
   <link rel="icon" href="../res/ico.png" type="image/x-icon">
   <meta charset="UTF-8">
   <title>L:\REDMOTH.MOE\PROJECTS</title>
-  <style>
-    @keyframes backgroundScroll {
-      from {
-        background-position: 0 0;
-      }
-      to {
-        background-position: 0 880%; /* Прокрутка вниз */
-      }
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background-image: url("../res/bg.png");
-      background-repeat: repeat;
-      animation: backgroundScroll 128s linear infinite;
-      color: white;
-      font-family: "Times New Roman", Times, serif;
-      text-align: center;
-    }
-
-    /* Шапка сайта */
-    header {
-      background-color: #000;
-      padding: 10px 0;
-      width: 100%;
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .header-logo {
-      height: 50px;
-      display: block;
-    }
-
-    /* Контейнер для логотипа с эффектом смены (исправленная версия) */
-    .logo-swap {
-      display: inline-block;
-      position: relative;
-      height: 50px;
-    }
-
-    .logo-swap img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: opacity 0.1s ease;
-    }
-
-    .logo-swap .hover-logo {
-      opacity: 0;
-    }
-
-    .logo-swap:hover .default-logo {
-      opacity: 0;
-    }
-
-    .logo-swap:hover .hover-logo {
-      opacity: 1;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    /* Основное содержимое */
-    .main-content {
-      flex: 1;
-      padding: 40px 20px;
-    }
-
-    .projects-container {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    /* Стиль для кликабельных прямоугольников */
-    .project-item {
-      background-color: #000;
-      border: 2px solid #333;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: white;
-    }
-
-    .project-image {
-      width: 200px;
-      height: auto;
-      flex-shrink: 0;
-    }
-
-    .project-content {
-      padding: 20px;
-      text-align: left;
-      flex: 1;
-    }
-
-    .project-title {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-
-    .project-description {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #ccc;
-    }
-
-    /* Подвал сайта */
-    footer {
-      background-color: #000;
-      padding: 20px 0;
-      width: 100%;
-      margin-top: auto;
-    }
-
-    .footer-content {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .social-buttons {
-      display: flex;
-      gap: 15px;
-      margin: 15px 0;
-    }
-
-    .social-buttons a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      padding: 5px 10px;
-      border: 1px solid white;
-      border-radius: 3px;
-    }
-
-    .copyright {
-      margin-top: 10px;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <!-- Шапка сайта -->
-  <header>
-    <div class="header-content">
-      <a href="https://redmoth.moe" class="logo-swap">
-        <img src="../res/uplogo.png" alt="Логотип" class="header-logo default-logo">
-        <img src="../res/uplogo_selected.png" alt="Логотип" class="header-logo hover-logo">
-      </a>
-      <nav>
-        <ul>
-          <li><a href="music/index.html">Music</a></li>
-          <li><a href="https://redmoth.moe">Archive</a></li>
-          <li><a href="https://redmoth.moe">Projects</a></li>
-          <li><a href="https://redmoth.moe">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
 
   <!-- Основное содержимое -->
   <div class="main-content">
     <div class="projects-container">
       <!-- Первый проект -->
       <a href="https://redmoth.moe" class="project-item">
-        <img src="../Elois.png" alt="Elois" class="project-image">
+        <img src="../res/Elois.png" alt="Elois" class="project-image">
         <div class="project-content">
           <h2 class="project-title">Elois</h2>
           <p class="project-description">Описание проекта Elois. Здесь можно рассказать о целях проекта, его особенностях и основных характеристиках.</p>
@@ -213,7 +24,7 @@
 
       <!-- Второй проект -->
       <a href="https://redmoth.moe" class="project-item">
-        <img src="../Diewtodsi.png" alt="Diewtodsi" class="project-image">
+        <img src="../res/Diewtodsi.png" alt="Diewtodsi" class="project-image">
         <div class="project-content">
           <h2 class="project-title">Diewtodsi</h2>
           <p class="project-description">Описание проекта Diewtodsi. Расскажите здесь о том, чем интересен этот проект и что он представляет.</p>
@@ -222,7 +33,7 @@
 
       <!-- Третий проект -->
       <a href="https://redmoth.moe" class="project-item">
-        <img src="../Prismatic.png" alt="Prismatic" class="project-image">
+        <img src="../res/Prismatic.png" alt="Prismatic" class="project-image">
         <div class="project-content">
           <h2 class="project-title">Prismatic</h2>
           <p class="project-description">Описание проекта Prismatic. Опишите здесь основные особенности и цели этого проекта.</p>
@@ -231,15 +42,20 @@
     </div>
   </div>
 
-  <!-- Подвал сайта -->
-  <footer>
-    <div class="footer-content">
-      <div class="social-buttons">
-        <a href="https://t.me/RedMothSelf">Telegram</a>
-        <a href="https://github.com/LicaRedMoth/redmoth">GitHub</a>
-      </div>
-      <div class="copyright">© 2025 REDMOTH.MOE. All right are NOT reserved.</div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
+  <script>
+    // Функция для загрузки HTML и вставки в элемент
+    function loadHTML(id, file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+            });
+    }
+
+    // Загружаем шапку и подвал
+    loadHTML('header-placeholder', '../header.html');
+    loadHTML('footer-placeholder', '../footer.html');
+  </script>
 </body>
 </html>

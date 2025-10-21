@@ -1,259 +1,37 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <base href="./">
   <link rel="icon" href="res/ico.png" type="image/x-icon">
   <meta charset="UTF-8">
   <title>L:\REDMOTH.MOE</title>
-  <style>
-    @keyframes backgroundScroll {
-      from {
-        background-position: 0 0;
-      }
-      to {
-        background-position: 0 880%;
-      }
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background-image: url("res/bg.png");
-      background-repeat: repeat;
-      animation: backgroundScroll 512s linear infinite;
-      color: white;
-      font-family: "Times New Roman", Times, serif;
-      text-align: center;
-    }
-
-    header {
-      background-color: #000;
-      padding: 10px 0;
-      width: 100%;
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .header-logo {
-      height: 50px;
-      display: block;
-    }
-
-    .logo-swap {
-      display: inline-block;
-      position: relative;
-      height: 50px;
-    }
-
-    .logo-swap img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: opacity 0.1s ease;
-    }
-
-    .logo-swap .hover-logo {
-      opacity: 0;
-    }
-
-    .logo-swap:hover .default-logo {
-      opacity: 0;
-    }
-
-    .logo-swap:hover .hover-logo {
-      opacity: 1;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    .logo-container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px 0;
-    }
-
-    img.logo {
-      max-width: 80%;
-      height: auto;
-      margin-bottom: 30px;
-    }
-
-    .gifs-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .gifs-container img {
-      max-height: 128px;
-      width: auto;
-    }
-
-    ul.index {
-      list-style-type: decimal;
-      margin: 20px auto;
-      padding: 0;
-      text-align: left;
-      max-width: 400px;
-    }
-
-    ul.index li {
-      margin: 5px 0;
-    }
-
-    .webm-emoji {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      vertical-align: middle;
-    }
-    
-    .png-emoji {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      vertical-align: middle;
-    }
-
-    .black-rectangle {
-      background-color: #000;
-      border: 2px solid #333;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 700px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      text-decoration: none;
-      color: white;
-    }
-
-    .rectangle-image {
-      max-width: 200px;
-      height: auto;
-      flex-shrink: 0;
-    }
-
-    .rectangle-content {
-      text-align: left;
-      flex: 1;
-    }
-
-    .rectangle-title {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-
-    .rectangle-description {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #ccc;
-    }
-
-    footer {
-      background-color: #000;
-      padding: 20px 0;
-      width: 100%;
-      margin-top: auto;
-    }
-
-    .footer-content {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .social-buttons {
-      display: flex;
-      gap: 15px;
-      margin: 15px 0;
-    }
-
-    .social-buttons a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      padding: 5px 10px;
-      border: 1px solid white;
-      border-radius: 3px;
-    }
-
-    .copyright {
-      margin-top: 10px;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <a href="https://redmoth.moe" class="logo-swap">
-        <img src="res/uplogo.png" alt="Логотип" class="header-logo default-logo">
-        <img src="res/uplogo_selected.png" alt="Логотип" class="header-logo hover-logo">
-      </a>
-      <nav>
-        <ul>
-          <li><a href="music/index.html">Music</a></li>
-          <li><a href="archive/index.html">Archive</a></li>
-          <li><a href="projects/index.html">Projects</a></li>
-          <li><a href="about/index.html">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
 
   <div class="logo-container">
-    <img src="res/logo.png" alt="Логотип" class="logo">
-
-    <div class="gifs-container">
-      <img src="res/0.png" alt="0">
-      <img src="res/1.png" alt="1">
-      <img src="res/2.png" alt="2">
-      <img src="res/3.png" alt="3">
-      <img src="res/4.png" alt="4">
-      <img src="res/5.png" alt="5">
-      <img src="res/6.png" alt="6">
-      <img src="res/7.png" alt="7">
-      <img src="res/8.png" alt="8">
-      <img src="res/9.png" alt="9">
+    <div style="position: relative; display: inline-block;">
+      <!-- Сплеш-надпись привязана непосредственно к контейнеру логотипа -->
+      <div id="splash"></div>
+      <img src="res/logo.avif" alt="Логотип" class="logo">
     </div>
+    
+    <div class="apng-container">
+      <img src="res/0.apng" alt="0">
+      <img src="res/1.apng" alt="1">
+      <img src="res/2.apng" alt="2">
+      <img src="res/3.apng" alt="3">
+      <img src="res/4.apng" alt="4">
+      <img src="res/5.apng" alt="5">
+      <img src="res/6.apng" alt="6">
+      <img src="res/7.apng" alt="7">
+      <img src="res/8.apng" alt="8">
+      <img src="res/9.apng" alt="9">
+    </div>
+    <ul class="index">
+      <div>This many floppies to save this site!<video class="webm-emoji" autoplay loop muted playsinline><source src="emj/blackrandom_AgADNR4AAil6iEo.webm" type="video/webm"></video></div>
+  </ul>
   </div>
 
   <ul class="index">
@@ -268,15 +46,30 @@
     </div>
   </a>
 
-  <footer>
-    <div class="footer-content">
-      <div class="social-buttons">
-        <a href="https://t.me/RedMothSelf"><img src="res/telegram.png" alt="Telegram" class="png-emoji">Telegram</a>
-        <a href="https://github.com/LicaRedMoth/redmoth"><img src="res/github.png" alt="GitHub" class="png-emoji">GitHub</a>
-        <a href="https://discord.com/users/727527042102591561"><img src="res/discord.png" alt="Discord" class="png-emoji">Discord</a>
-      </div>
-      <div class="copyright">© 2025 REDMOTH.MOE. All right are NOT reserved.</div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
+
+  <script>
+  fetch("splashes.json")
+    .then(response => response.json())
+    .then(splashes => {
+      const splash = splashes[Math.floor(Math.random() * splashes.length)];
+      document.getElementById("splash").textContent = splash;
+    });
+</script>
+  
+  <script>
+    // Функция для загрузки HTML и вставки в элемент
+    function loadHTML(id, file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+            });
+    }
+
+    // Загружаем шапку и подвал
+    loadHTML('header-placeholder', 'header.html');
+    loadHTML('footer-placeholder', 'footer.html');
+  </script>
 </body>
 </html>
