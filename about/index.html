@@ -1,12 +1,105 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-  </body>
+<html lang="ru">
+<head>
+  <link rel="icon" href="../res/ico.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <base href="../../">
+  <title>Music - L:\REDMOTH.MOE</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- Основное содержимое в стиле вики -->
+  <div class="wiki-container">
+      
+  <div class="wiki-banner">
+    <img src="music/repercussions/res/banner.png" alt="Баннер альбома" class="banner-image">
+  </div>
+      
+    <div class="wiki-content">
+      <div class="wiki-header">
+          
+          
+        <h1 class="wiki-title"><img src="music/repercussions/res/cover.png" alt="Discord" class="png-emoji"> Portal 2: Repercussions</h1>
+      </div>
+
+      <div class="wiki-layout">
+        <!-- Основной текст слева -->
+        <div class="wiki-main">
+          <div class="wiki-text">
+            <h2>Описание</h2>
+            <p>Здесь будет размещено описание альбома или композиции. Это может быть история создания, вдохновение, процесс записи или любые другие детали, которые вы хотите рассказать своим слушателям.</p>
+
+            <h2>Треклист</h2>
+            <p>1. First Track - 5:23<br>
+            2. Second Track - 4:56<br>
+            3. Third Track - 6:12<br>
+            4. Fourth Track - 3:45<br>
+            5. Fifth Track - 7:34</p>
+
+            <h2>Отзывы</h2>
+            <p>Этот альбом был тепло принят критиками и слушателями. Многие отмечают уникальное звучание и атмосферность композиций.</p>
+
+            <h2>Интересные факты</h2>
+            <p>• Запись альбома заняла 6 месяцев<br>
+            • В записи участвовали приглашенные музыканты<br>
+            • Оригинальное название альбома было изменено в последний момент</p>
+          </div>
+        </div>
+
+        <!-- Правая панель с обложкой и метаданными -->
+        <div class="wiki-sidebar">
+          <img src="music/repercussions/res/cover.png" alt="Обложка альбома" class="album-cover">
+
+          <div class="metadata">
+            <h3>Информация</h3>
+            <table class="metadata-table">
+              <tr>
+                <td>Артист:</td>
+                <td>Red Moth</td>
+              </tr>
+              <tr>
+                <td>Дата выпуска:</td>
+                <td>1 января 2025</td>
+              </tr>
+              <tr>
+                <td>Жанр:</td>
+                <td>Электронная музыка</td>
+              </tr>
+              <tr>
+                <td>Длительность:</td>
+                <td>45:27</td>
+              </tr>
+              <tr>
+                <td>Лейбл:</td>
+                <td>REDMOTH.MOE</td>
+              </tr>
+              <tr>
+                <td>Формат:</td>
+                <td>Цифровая дистрибуция</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    // Функция для загрузки HTML и вставки в элемент
+    function loadHTML(id, file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+            });
+    }
+
+    // Загружаем шапку и подвал
+    loadHTML('header-placeholder', '../../header.html');
+    loadHTML('footer-placeholder', '../../footer.html');
+  </script>
+</body>
 </html>

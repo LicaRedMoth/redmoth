@@ -17,34 +17,23 @@
       <img src="res/logo.avif" alt="Логотип" class="logo">
     </div>
     
-    <div class="apng-container">
-      <img src="res/0.apng" alt="0">
-      <img src="res/1.apng" alt="1">
-      <img src="res/2.apng" alt="2">
-      <img src="res/3.apng" alt="3">
-      <img src="res/4.apng" alt="4">
-      <img src="res/5.apng" alt="5">
-      <img src="res/6.apng" alt="6">
-      <img src="res/7.apng" alt="7">
-      <img src="res/8.apng" alt="8">
-      <img src="res/9.apng" alt="9">
-    </div>
+    <div id="archive-counter" class="apng-container">
+    <span style="font-family: monospace; opacity: 0.5;">Loading...</span>
+</div>
     <ul class="index">
-      <div>This many floppies to save this site!<video class="webm-emoji" autoplay loop muted playsinline><source src="emj/blackrandom_AgADNR4AAil6iEo.webm" type="video/webm"></video></div>
+      <div><video class="webm-emoji" autoplay loop muted playsinline><source src="emj/blackrandom_AgAD2SAAApfmiEo.webm" type="video/webm"></video>Open Source Audio Counter™<video class="webm-emoji" autoplay loop muted playsinline><source src="emj/blackrandom_AgAD2SAAApfmiEo.webm" type="video/webm"></video></div>
   </ul>
   </div>
 
   <ul class="index">
-    <div>Site on reconstruction<video class="webm-emoji" autoplay loop muted playsinline><source src="emj/blackrandom_AgADNR4AAil6iEo.webm" type="video/webm"></video></div>
+    <div>latest release<video class="webm-emoji" autoplay loop muted playsinline><source src="emj/blackrandom_AgADNR4AAil6iEo.webm" type="video/webm"></video></div>
   </ul>
 
-  <a href="https://redmoth.moe" class="black-rectangle">
-    <img src="https://ia601002.us.archive.org/24/items/Crayon-Physics-Deluxe-Soundtrack/Crayon%20Physics%20Deluxe/cover_thumb.png" alt="Crayon" class="rectangle-image">
-    <div class="rectangle-content">
-      <h2 class="rectangle-title">Crayon Physics Deluxe Soundtrack - СОХРАНЁН!</h2>
-      <p class="rectangle-description">Нам удалось найти саундтрек к этой замечательной игре в максимально возможном качестве, посмотрите как это было!</p>
-    </div>
-  </a>
+<div class="black-rectangle">
+  <iframe src="https://bandcamp.com/EmbeddedPlayer/track=1835872302/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=small/transparent=true/" seamless>
+    <a href="https://licaredmoth.bandcamp.com/track/cariprazine">Cariprazine by RedMoth</a>
+  </iframe>
+</div>
 
   <div id="footer-placeholder"></div>
 
@@ -56,20 +45,56 @@
       document.getElementById("splash").textContent = splash;
     });
 </script>
-  
-  <script>
-    // Функция для загрузки HTML и вставки в элемент
-    function loadHTML(id, file) {
-        fetch(file)
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById(id).innerHTML = data;
-            });
-    }
+<script>
+  function loadHTML(id, file) {
+    fetch(file)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById(id).innerHTML = data;
+            // Если загрузили футер — сразу подставляем год
+            if (id === 'footer-placeholder') {
+                document.getElementById("year").textContent = new Date().getFullYear();
+            }
+        });
+}
 
     // Загружаем шапку и подвал
     loadHTML('header-placeholder', 'header.html');
     loadHTML('footer-placeholder', 'footer.html');
   </script>
+  <script>
+    async function updateApngCounter() {
+        const url = 'https://archive.org/advancedsearch.php?q=collection:(opensource_audio)&rows=0&output=json';
+        const container = document.getElementById('archive-counter');
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            
+            // Получаем число и переводим его в строку (например, "2998326")
+            const countStr = data.response.numFound.toString();
+            
+            // Очищаем контейнер от текста "Loading..."
+            container.innerHTML = '';
+
+            // Проходим циклом по каждому символу в строке
+            for (let char of countStr) {
+                const img = document.createElement('img');
+                // Формируем путь к картинке: res/0.apng, res/1.apng и т.д.
+                img.src = `res/${char}.apng`;
+                img.alt = char;
+                // Можно добавить небольшой стиль, чтобы цифры не слипались
+                img.style.display = "inline-block";
+                
+                container.appendChild(img);
+            }
+        } catch (error) {
+            console.error('Ошибка счетчика:', error);
+            container.innerHTML = 'error';
+        }
+    }
+
+    updateApngCounter();
+</script>
 </body>
 </html>
