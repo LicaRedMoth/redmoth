@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика Archive.org</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: #eee; padding: 20px; }
+        .count-box { font-size: 24px; font-weight: bold; color: #5dade2; }
+    </style>
+</head>
+<body>
+
+    <div>
+        Количество аудио в Open Source Audio: 
+        <span id="audio-count">Загрузка...</span>
+    </div>
+
+    <script>
+        async function fetchArchiveCount() {
+            // Используем официальный Advanced Search API Archive.org
+            // Запрашиваем количество результатов для коллекции opensource_audio
+            const url = 'https://archive.org/advancedsearch.php?q=collection:(opensource_audio)&rows=0&output=json';
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                // Извлекаем общее количество найденных элементов (numFound)
+                const totalItems = data.response.numFound;
+
+                // Форматируем число (добавляем разделители тысяч)
+                const formattedCount = new Intl.NumberFormat('en-US').format(totalItems);
+
+                document.getElementById('audio-count').innerText = formattedCount;
+            } catch (error) {
+                console.error('Ошибка при получении данных:', error);
+                document.getElementById('audio-count').innerText = 'ошибка загрузки';
+            }
+        }
+
+        // Запускаем функцию при загрузке страницы
+        fetchArchiveCount();
+    </script>
+</body>
+</html>
